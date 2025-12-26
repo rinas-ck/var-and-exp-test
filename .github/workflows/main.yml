@@ -18,3 +18,4 @@ jobs:
           echo "GitHub Ref: ${{ github.ref }}"
           echo "Commit SHA: ${{ github.sha }}"
           echo "Runner OS: ${{ runner.os }}"
+          echo "Job status: ${{ job.status }}"
