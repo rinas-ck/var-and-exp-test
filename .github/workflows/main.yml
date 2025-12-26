@@ -1,0 +1,20 @@
+name: Context Demo
+
+on: push
+
+env:
+  GLOBAL_ENV: "global_value"
+
+jobs:
+  context-info:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: "job_level_value"
+    steps:
+      - name: Step 1
+        run: |
+          echo "Global ENV: $GLOBAL_ENV"
+          echo "Job ENV: $JOB_ENV"
+          echo "GitHub Ref: ${{ github.ref }}"
+          echo "Commit SHA: ${{ github.sha }}"
+          echo "Runner OS: ${{ runner.os }}"
